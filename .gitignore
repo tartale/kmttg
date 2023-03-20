@@ -1,0 +1,8 @@
+bin
+dist
+fxlib
+release
+.DS_Store
+.envrc
+.vscode
+.idea/
