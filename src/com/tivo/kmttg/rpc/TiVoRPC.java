@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.SocketException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -26,6 +29,8 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -89,7 +94,7 @@ public class TiVoRPC {
    }
    
    public TiVoRPC(String IP, String mak, String programDir) {
-      this(null, IP, mak, programDir, -1, null, false, false);
+      this(null, IP, mak, programDir, -1, null, false, true);
    }
    
    /**
@@ -107,7 +112,7 @@ public class TiVoRPC {
       this.cdata = cdata;
       this.programDir = programDir;
       this.rpcOld = oldSchema;
-      this.debug = debug;
+      this.debug = false;
       this.tivoName = tivoName;
       this.IP = IP;
       if(port <= 0) port = DEFAULT_PORT;
@@ -149,6 +154,14 @@ public class TiVoRPC {
       }
    }
    
+   private void Debug(int rpcId, boolean isRequest, String message) throws Exception {
+    String rpcIdString = String.format("%03d", rpcId);
+    String fileName = "/Users/Tom/Projects/kmttg-plus/java/debug/" + rpcIdString + (isRequest? "-request": "-response") + ".txt";
+
+    Path path = Paths.get(fileName);
+    Files.write(path, message.getBytes());
+  }    
+
    /**
     * Define the request String (header and body) to transmit over the socket.
     * SchemaVersion header is defined based on constructor boolean or downgraded automatically on the first error response of "Unsupported schema version."
@@ -185,7 +198,9 @@ public class TiVoRPC {
 
          String body = data.toString();
          String start_line = String.format("MRPC/2 %d %d", headers.length()+2, body.length());
-         return start_line + eol + headers + eol + body + "\n";
+         String message = start_line + eol + headers + eol + body + "\n";
+         Debug(rpc_id, true, message);
+         return message;
       } catch (Exception e) {
          error("RpcRequest error: " + e.getMessage());
          return null;
@@ -372,7 +387,14 @@ public class TiVoRPC {
             if (debug) {
                print("READ: " + new String(headers) + new String(body));
             }
-            
+
+            Pattern pattern = Pattern.compile("RpcId: (\\d+)");
+            Matcher matcher = pattern.matcher(new String(headers));            
+            if (matcher.find(0)) {
+              int rpc_id = Integer.parseInt(matcher.group(1));
+                Debug(rpc_id, false, buf + "\r\n" + new String(headers) + new String(body));
+            }
+
             // Pull out IsFinal value from header
             Boolean IsFinal;
             buf = new String(headers, "UTF8");

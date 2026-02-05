@@ -1,0 +1,13 @@
+MRPC/2 236 84
+Type: request
+RpcId: 1
+SchemaVersion: 17
+Content-Type: application/json
+RequestType: bodyAuthenticate
+ResponseCount: single
+BodyId: 
+X-ApplicationName: Quicksilver
+X-ApplicationVersion: 1.2
+X-ApplicationSessionId: 0xc13f7e5
+
+{"credential":{"type":"makCredential","key":"7532411384"},"type":"bodyAuthenticate"}

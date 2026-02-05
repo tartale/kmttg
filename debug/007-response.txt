@@ -1,0 +1,7 @@
+MRPC/2 75 35
+Content-Type: application/json
+IsFinal: true
+RpcId: 7
+Type: response
+
+{"type": "recordingFolderItemList"}

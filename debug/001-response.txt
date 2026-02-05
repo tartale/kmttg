@@ -1,0 +1,7 @@
+MRPC/2 75 129
+Content-Type: application/json
+IsFinal: true
+RpcId: 1
+Type: response
+
+{"message": "Authentication successful", "status": "success", "type": "bodyAuthenticateResponse", "mediaAccessKey": "7532411384"}

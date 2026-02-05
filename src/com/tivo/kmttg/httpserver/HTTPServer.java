@@ -1468,6 +1468,9 @@ public class HTTPServer {
             }
             if (etag != null && !headers.contains("ETag"))
                 headers.add("ETag", etag);
+            headers.add("Access-Control-Allow-Origin", "*");
+            headers.add("Access-Control-Allow-Headers", "*");
+            headers.add("Access-Control-Allow-Methods", "GET");
             sendHeaders(status);
         }
 
@@ -1840,6 +1843,9 @@ public class HTTPServer {
         } else if (method.equals("OPTIONS")) {
             resp.getHeaders().add("Allow", "GET, HEAD, POST, OPTIONS, TRACE");
             resp.getHeaders().add("Content-Length", "0"); // RFC2616#9.2
+            resp.getHeaders().add("Access-Control-Allow-Origin", "*");
+            resp.getHeaders().add("Access-Control-Allow-Headers", "*");
+            resp.getHeaders().add("Access-Control-Allow-Methods", "GET");
             resp.sendHeaders(200);
         } else if (method.equals("TRACE")) {
             handleTrace(req, resp);

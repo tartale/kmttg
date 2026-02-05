@@ -1,0 +1,13 @@
+MRPC/2 256 114
+Type: request
+RpcId: 230
+SchemaVersion: 17
+Content-Type: application/json
+RequestType: recordingSearch
+ResponseCount: single
+BodyId: tsn:8460001909E14AD
+X-ApplicationName: Quicksilver
+X-ApplicationVersion: 1.2
+X-ApplicationSessionId: 0xc13f7e5
+
+{"levelOfDetail":"medium","bodyId":"tsn:8460001909E14AD","recordingId":"tivo:rc.1113799","type":"recordingSearch"}
