@@ -13,6 +13,7 @@
 /rc_images
 /release
 bin
+debug
 dist
 fxlib
 release

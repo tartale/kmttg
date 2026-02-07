@@ -1,7 +1,0 @@
-MRPC/2 77 48
-Content-Type: application/json
-IsFinal: true
-RpcId: 199
-Type: response
-
-{"objectId": ["mfs:rc.130042"], "type": "idSet"}
