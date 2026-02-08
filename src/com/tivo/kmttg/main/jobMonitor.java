@@ -1640,8 +1640,7 @@ public class jobMonitor {
    }
    
    // Shut down OS (Windows only)
-   @SuppressWarnings("deprecation")
-  public void shutdown() {
+   public void shutdown() {
       if (config.OS.equals("windows")) {
          try {
             Runtime.getRuntime().exec(new String[]{"shutdown.exe", "-f", "-s"});
@@ -1719,8 +1718,7 @@ public class jobMonitor {
 	 * been processed. Excludes playlist jobs. Mainly targeting file processing
 	 * jobs.
 	 */
-	@SuppressWarnings("deprecation")
-  public static void saveAllJobs() {
+	public static void saveAllJobs() {
 		if (JOBS.isEmpty()) {
 			log.print("There are currently no queued jobs to save.");
 		}

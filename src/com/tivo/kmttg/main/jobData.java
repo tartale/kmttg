@@ -454,7 +454,7 @@ public class jobData implements Serializable, Cloneable {
 		return (jobData) clone(this);
 	}
    
-   private static Object clone(Object o)
+   private static jobData clone(jobData o)
    {
       jobData clone = new jobData();
       // Walk up the superclass hierarchy
