@@ -42,7 +42,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.embed.swing.JFXPanel;
 import javafx.util.Callback;
 
 import com.tivo.kmttg.JSON.JSONArray;
@@ -927,8 +926,7 @@ public class spTable extends TableMap {
     
     public static void SaveToFile(String tivoName, String file) {
     	try  {
-        JFXPanel p = new JFXPanel();//need to init javafx
-		spTable tab = new spTable();
+        spTable tab = new spTable();
     	
         jobData job = new jobData();
         job.source      = tivoName;
