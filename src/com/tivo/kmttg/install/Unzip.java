@@ -28,7 +28,6 @@ import com.tivo.kmttg.util.log;
 
 public class Unzip {
 
-@SuppressWarnings("resource")
 public static Boolean unzip(String dir, String file) {
    debug.print("dir=" + dir + " file=" + file);
     Enumeration<?> entries;

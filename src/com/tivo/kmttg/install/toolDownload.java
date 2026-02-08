@@ -77,7 +77,6 @@ public class toolDownload {
       return null;
    }
    
-   @SuppressWarnings("resource")
    private Boolean downloadUrl(String urlString, String localFileName) {
       BufferedInputStream in = null;
       RandomAccessFile out = null;

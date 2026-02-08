@@ -7,9 +7,16 @@ then
   MODULEPATH=$(dirname "$WEBJAR")
 fi
 
+debugArg=""
+DEBUG=$(echo "${DEBUG:=false}" | tr '[:upper:]' '[:lower:]')
+if [[ "${DEBUG}" == "true" ]]
+then
+  debugArg="-d"
+fi
+
 if [ ! -z $WEBJAR ] && [ -d "$MODULEPATH" ]
 then
-  java --module-path "$MODULEPATH" --add-modules javafx.web -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" "$@"
+  java --module-path "$MODULEPATH" --add-modules javafx.web -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" ${debugArg} "$@"
 else
-  java -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" "$@"
+  java -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" ${debugArg} "$@"
 fi

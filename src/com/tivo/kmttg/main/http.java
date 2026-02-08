@@ -67,7 +67,6 @@ import net.straylightlabs.tivolibre.TivoDecoder;
 import com.tivo.kmttg.util.log;
 
 public class http {
-	private static final int READ_TIMEOUT = 120; // Timeout for InputStream reads
 	private static final SSLSocketFactory TRUST_ANY = createSocketFactory();
 
 	private static final HostnameVerifier VERIFY_ANY = new HostnameVerifier() {
@@ -210,7 +209,6 @@ public class http {
 		return true;
 	}
 
-	@SuppressWarnings("resource")
 	public static Boolean downloadPiped(String urlString, String username, String password, OutputStream out,
 			Boolean cookies, String offset) throws IOException, InterruptedException, Exception {
 		CloseableHttpResponse in;

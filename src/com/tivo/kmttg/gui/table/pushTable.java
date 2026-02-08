@@ -25,7 +25,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import com.tivo.kmttg.JSON.JSONArray;
 import com.tivo.kmttg.JSON.JSONException;
 import com.tivo.kmttg.JSON.JSONObject;
-import com.tivo.kmttg.gui.table.TableUtil;
 import com.tivo.kmttg.gui.sortable.sortableInt;
 import com.tivo.kmttg.main.config;
 import com.tivo.kmttg.util.log;
