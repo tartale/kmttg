@@ -14,7 +14,7 @@ then
   debugArg="-d"
 fi
 
-if [ ! -z $WEBJAR ] && [ -d "$MODULEPATH" ]
+if [[ -n $WEBJAR && -d "$MODULEPATH" ]]
 then
   java --module-path "$MODULEPATH" --add-modules javafx.web -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" ${debugArg} "$@"
 else

@@ -16,4 +16,5 @@
 bin
 debug
 dist
+fxlib
 javafx-sdk*
