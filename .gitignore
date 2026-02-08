@@ -2,6 +2,7 @@
 .envrc
 .idea/
 .vscode
+*.mp4
 /.gradle
 /.settings
 /*.jar
@@ -15,5 +16,4 @@
 bin
 debug
 dist
-fxlib*
 javafx-sdk*
