@@ -64,7 +64,6 @@ import javafx.util.Callback;
 import com.tivo.kmttg.JSON.JSONArray;
 import com.tivo.kmttg.JSON.JSONException;
 import com.tivo.kmttg.JSON.JSONObject;
-import com.tivo.kmttg.gui.table.TableUtil;
 import com.tivo.kmttg.gui.TableMap;
 import com.tivo.kmttg.gui.gui;
 import com.tivo.kmttg.gui.comparator.ChannelComparator;

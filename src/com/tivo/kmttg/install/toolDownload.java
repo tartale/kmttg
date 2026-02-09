@@ -28,7 +28,6 @@ import java.net.NoRouteToHostException;
 
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.DefaultRedirectStrategy;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
@@ -77,7 +76,6 @@ public class toolDownload {
       return null;
    }
    
-   @SuppressWarnings("resource")
    private Boolean downloadUrl(String urlString, String localFileName) {
       BufferedInputStream in = null;
       RandomAccessFile out = null;
@@ -89,8 +87,9 @@ public class toolDownload {
           HttpClient httpClient = httpClientBuilder.build();
           HttpGet httpget = new HttpGet(urlString);
           
-          CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpget);
-          in = new BufferedInputStream(response.getEntity().getContent());         
+          try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpget)) {
+            in = new BufferedInputStream(response.getEntity().getContent());
+          }
           out = new RandomAccessFile(localFileName, "rw");
           
           Integer howManyBytes;

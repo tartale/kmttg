@@ -67,7 +67,6 @@ import com.tivo.kmttg.main.config;
 import com.tivo.kmttg.main.jobData;
 import com.tivo.kmttg.main.jobMonitor;
 import com.tivo.kmttg.main.mdns;
-import com.tivo.kmttg.rpc.GetDomainToken;
 import com.tivo.kmttg.task.autotune;
 import com.tivo.kmttg.task.custom;
 import com.tivo.kmttg.util.debug;

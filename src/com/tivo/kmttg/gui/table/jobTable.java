@@ -30,7 +30,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-import com.tivo.kmttg.gui.table.TableUtil;
 import com.tivo.kmttg.gui.jobEntry;
 import com.tivo.kmttg.gui.taskInfo;
 import com.tivo.kmttg.main.config;

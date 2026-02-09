@@ -47,7 +47,6 @@ import com.tivo.kmttg.JSON.JSONConverter;
 import com.tivo.kmttg.JSON.JSONException;
 import com.tivo.kmttg.JSON.JSONObject;
 import com.tivo.kmttg.gui.TableMap;
-import com.tivo.kmttg.gui.table.TableUtil;
 import com.tivo.kmttg.gui.comparator.DateComparator;
 import com.tivo.kmttg.gui.comparator.DurationComparator;
 import com.tivo.kmttg.gui.remote.util;

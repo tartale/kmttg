@@ -34,8 +34,6 @@ import java.io.RandomAccessFile;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
 import java.net.NoRouteToHostException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Optional;
@@ -230,7 +228,6 @@ public class update {
       return null;
    }
       
-   @SuppressWarnings("resource")
    public static Boolean unzip(String dir, String file) {
        Enumeration<?> entries;
        ZipFile zipFile;

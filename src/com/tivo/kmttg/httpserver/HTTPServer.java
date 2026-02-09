@@ -1468,6 +1468,9 @@ public class HTTPServer {
             }
             if (etag != null && !headers.contains("ETag"))
                 headers.add("ETag", etag);
+            headers.add("Access-Control-Allow-Origin", "*");
+            headers.add("Access-Control-Allow-Headers", "*");
+            headers.add("Access-Control-Allow-Methods", "GET");
             sendHeaders(status);
         }
 
@@ -1584,8 +1587,7 @@ public class HTTPServer {
             setName(getClass().getSimpleName() + "-" + port);
         }
 
-        @SuppressWarnings("resource")
-      @Override
+        @Override
         public void run() {
             try {
                 while (!serv.isClosed()) {
@@ -1840,6 +1842,9 @@ public class HTTPServer {
         } else if (method.equals("OPTIONS")) {
             resp.getHeaders().add("Allow", "GET, HEAD, POST, OPTIONS, TRACE");
             resp.getHeaders().add("Content-Length", "0"); // RFC2616#9.2
+            resp.getHeaders().add("Access-Control-Allow-Origin", "*");
+            resp.getHeaders().add("Access-Control-Allow-Headers", "*");
+            resp.getHeaders().add("Access-Control-Allow-Methods", "GET");
             resp.sendHeaders(200);
         } else if (method.equals("TRACE")) {
             handleTrace(req, resp);
@@ -1855,8 +1860,7 @@ public class HTTPServer {
      * @param resp the response into which the content is written
      * @throws IOException if an error occurs
      */
-    @SuppressWarnings("resource")
-   public void handleTrace(Request req, Response resp) throws IOException {
+    public void handleTrace(Request req, Response resp) throws IOException {
         ChunkedOutputStream out = resp.getChunkedBody();
         resp.getHeaders().add("Content-Type", "message/http");
         resp.sendHeaders(200);

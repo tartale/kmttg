@@ -43,7 +43,6 @@ import com.tivo.kmttg.JSON.JSONObject;
 import com.tivo.kmttg.gui.TableMap;
 import com.tivo.kmttg.gui.comparator.ChannelNumComparator;
 import com.tivo.kmttg.gui.sortable.sortableChannelNum;
-import com.tivo.kmttg.gui.table.TableUtil;
 import com.tivo.kmttg.main.config;
 import com.tivo.kmttg.main.jobData;
 import com.tivo.kmttg.main.jobMonitor;
