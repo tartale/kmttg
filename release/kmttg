@@ -1,17 +1,15 @@
-#!/usr/bin//env bash
-DIRNAME=$(dirname "$0")
+#!/bin/sh
+DIRNAME=`dirname "$0"`
 
-JAVA_VERSION=$(cat .java-version)
-
-if [[ ! "${JAVA_VERSION}" == *1.8* && -d "${DIRNAME}/javafx-sdk" ]]
+if [ -d "$DIRNAME/javafx-sdk" ]
 then
-  WEBJAR=$(find "${DIRNAME}/javafx-sdk" -name javafx.web.jar)
-  MODULEPATH=$(dirname "${WEBJAR}")
+  WEBJAR=`find "$DIRNAME/javafx-sdk" -name javafx.web.jar`
+  MODULEPATH=$(dirname "$WEBJAR")
 fi
 
-if [[ -n "${WEBJAR}" && -d "${MODULEPATH}" ]]
+if [ ! -z $WEBJAR ] && [ -d "$MODULEPATH" ]
 then
-  java --module-path "${MODULEPATH}" --add-modules javafx.web -Djava.net.preferIPv4Stack=true  -jar "${DIRNAME}/kmttg.jar" "$@"
+  java --module-path "$MODULEPATH" --add-modules javafx.web -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" "$@"
 else
-  java -Djava.net.preferIPv4Stack=true  -jar "${DIRNAME}/kmttg.jar" "$@"
+  java -Djava.net.preferIPv4Stack=true  -jar "$DIRNAME/kmttg.jar" "$@"
 fi

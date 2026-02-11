@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_331]"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="images"/>
-	<classpathentry kind="lib" path="/Users/Tom/Projects/kmttg-plus/java/lib/jmdns.jar"/>
-	<classpathentry kind="lib" path="/Users/Tom/Projects/kmttg-plus/java/lib/tivo-libre.jar"/>
-	<classpathentry kind="lib" path="/Users/Tom/Projects/kmttg-plus/java/lib/httpclient5-5.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Tom/Projects/kmttg-plus/java/lib/httpcore5-5.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/Tom/Projects/kmttg-plus/java/lib/Java-WebSocket-1.5.5.jar"/>
+	<classpathentry kind="lib" path="lib/jmdns.jar"/>
+	<classpathentry kind="lib" path="lib/tivo-libre.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient5-5.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore5-5.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore5-5.1.3.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="javafx-sdk/lib/javafx-swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
