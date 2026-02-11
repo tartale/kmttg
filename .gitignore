@@ -1,6 +1,8 @@
+.classpath
 .DS_Store
 .envrc
 .idea/
+.project
 .vscode
 *.mp4
 /.gradle
