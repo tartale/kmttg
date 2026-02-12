@@ -7,13 +7,5 @@
 	<classpathentry kind="lib" path="lib/httpclient5-5.1.3.jar"/>
 	<classpathentry kind="lib" path="lib/httpcore5-5.1.3.jar"/>
 	<classpathentry kind="lib" path="lib/httpcore5-5.1.3.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.base.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.controls.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.fxml.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.graphics.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.media.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.swing.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx.web.jar"/>
-	<classpathentry kind="lib" path="javafx-sdk/lib/javafx-swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
